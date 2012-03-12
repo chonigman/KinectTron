@@ -1,0 +1,30 @@
+Contents of /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/threeDstuff_Prefix.pch
+2.0 (tags/Apple/clang-139) (based on LLVM 2.9svn)
+-x
+c++
+-arch
+i386
+-fmessage-length=0
+-fdiagnostics-print-source-range-info
+-fdiagnostics-show-category=id
+-fdiagnostics-parseable-fixits
+-fpascal-strings
+-O0
+-isysroot
+/Developer/SDKs/MacOSX10.6.sdk
+-fasm-blocks
+-mmacosx-version-min=10.5
+-gdwarf-2
+-fvisibility-inlines-hidden
+-iquote
+-iquote
+-iquote../../../include
+-iquote../include
+-iquote../../../blocks/osc/include
+-I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/DerivedData/threeDstuff/Build/Products/Debug/include
+-I../../../boost
+-F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/DerivedData/threeDstuff/Build/Products/Debug
+-ferror-limit=10
+-working-directory=/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode
+-Xclang
+-detailed-preprocessing-record

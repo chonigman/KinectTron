@@ -1,0 +1,24 @@
+Contents of /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/threeDstuff_Prefix.pch
+4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.9)
+-x
+c++
+-arch
+i386
+-fmessage-length=0
+-pipe
+-fpascal-strings
+-O0
+-isysroot
+/Developer/SDKs/MacOSX10.6.sdk
+-fasm-blocks
+-mmacosx-version-min=10.5
+-gdwarf-2
+-fvisibility-inlines-hidden
+-iquote
+-iquote
+-iquote../../../include
+-iquote../include
+-iquote../../../blocks/osc/include
+-I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/DerivedData/threeDstuff/Build/Products/Debug/include
+-I../../../boost
+-F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/DerivedData/threeDstuff/Build/Products/Debug
