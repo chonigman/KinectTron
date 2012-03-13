@@ -93,7 +93,7 @@ protected:
     TriMesh mesh;
     double mTime;
     
-    GLfloat light_position[];
+    GLfloat light_position[4];
     
     float shoulderDiff, shoulderDiffz, shoulderDiffzz;
     
@@ -134,7 +134,7 @@ void threeDstuffApp::setup()
     
     // mLight.Light(2, 1);
     mDirectional = -1.0f;
-    al = al2 = al3 = al4 = 0;
+    al = al2 = al3 = al4 = .2;
     // gl::enableDepthWrite();
     //	gl::enableDepthRead();
     //	gl::enableAlphaBlending();
@@ -158,8 +158,13 @@ void threeDstuffApp::update()
     
     mObjects.update();
     wallHit(mObjects.ballLoc);
+    
+    for(int i = 0; i < 4; i++){
+        wallHit(mObjects.ballsLoc[i]);
+    }
     fadeOut();
     
+    mObjects.ballRetrieval(head, rH, lH);
 }
 
 void threeDstuffApp::oscUpdate(){
@@ -225,19 +230,22 @@ void threeDstuffApp::draw()
     // cout << rS.z - lS.z << std::endl;
     // clear out the window with white
 	gl::clear( Colorf( 0.0f, 0.0f, 0.0f ) ); 
-    ci::ColorA color( Color(0, 0, 1.0f));
+    //ci::ColorA color( Color(0, 0, 1.0f));
     //for(int x = head.x-5; x <head.x+5; x+=5){
     //for(int z = head.y-20; z < head.y+20; z+=10){
-   // glEnable( GL_LIGHTING);
-   // glEnable( GL_LIGHT0);
-   // glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    //glEnable( GL_LIGHTING);
+    //glEnable( GL_LIGHT0);
+    //glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-   // light_position[4] = {head.x, head.y, head.z-20, 0};
-   // glMaterialfv(GL_FRONT, GL_DIFFUSE, color );
+    //light_position[0] = head.x;
+    //light_position[1] = head.y;
+    //light_position[2] = head.z-20
+    //light_position[3] = 0;
+    //glMaterialfv(GL_FRONT, GL_DIFFUSE, color );
     //glMaterialfv( GL_FRONT, GL_SPECULAR, mat_specular );
     //glMaterialfv(GL_FRONT, GL_AMBIENT, color);
-    //glLightfv(GL_FRONT, GL_SPOT_DIRECTION, color);
-   // glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+   // glLightfv(GL_FRONT, GL_SPOT_DIRECTION, color);
+    //glLightfv(GL_LIGHT0, GL_POSITION, light_position);
     //glLightfv(GL_FRONT, GL_SPOT_CUTOFF, light_position);
     
     
@@ -295,9 +303,16 @@ void threeDstuffApp::draw()
     shoulderDiff = (rS.z - lS.z);
     shoulderDiffzz = (shoulderDiff + shoulderDiffz)*.5;
     // gl::color( Color(0, 1, 0) );
+    /* ********* Camera Follows User *********************
     CameraPersp cam;
     cam.setEyePoint( Vec3f(head.x, head.y, head.z + 30) );
     cam.setCenterOfInterestPoint( Vec3f(shoulderDiff*4, head.y, shoulderDiff));
+    cam.setPerspective( 80.0f, getWindowAspectRatio(), 1.0f, 1000.0f );
+    mMayaCam.setCurrentCam( cam );
+    */
+    CameraPersp cam;
+    cam.setEyePoint( Vec3f(0, 20, 50) );
+    cam.setCenterOfInterestPoint( Vec3f(0, 20, -100));
     cam.setPerspective( 80.0f, getWindowAspectRatio(), 1.0f, 1000.0f );
     mMayaCam.setCurrentCam( cam );
     
@@ -306,6 +321,8 @@ void threeDstuffApp::draw()
     //std::cout << shoulderDiff << " "<< rS.z << " " << lS.z << std::endl;
     shoulderDiffzz = shoulderDiffz;
     shoulderDiffz = shoulderDiff;
+    
+    
 }
 
 void threeDstuffApp::drawGrid(float size, float step)
@@ -365,13 +382,13 @@ void threeDstuffApp::wallHit(Vec3f ball){
 }
 
 void threeDstuffApp::fadeOut(){
-    if(al <= 1 && al > -1){
+    if(al <= 1 && al > .2){
         al = al * .9; 
        // std::cout<<al<<std::endl
     }
-    if(al2 <= 1 && al2 > -1) al2 = al2 * .9;
-    if(al3 <= 1 && al3 > -1) al3 = al3 * .9;
-    if(al4 <= 1 && al4 > -1) al4 = al4 * .9;
+    if(al2 <= 1 && al2 > .2) al2 = al2 * .9;
+    if(al3 <= 1 && al3 > .2) al3 = al3 * .9;
+    if(al4 <= 1 && al4 > .2) al4 = al4 * .9;
     
 }
 
