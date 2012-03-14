@@ -108,7 +108,7 @@ void objects::hitTest(ci::Vec3f handR, ci::Vec3f handL ){
     //grab ball and check for throw *******************************
     if(ballHitR == true && ballThrow == false){
         ballLoc = handR;
-        if(zzBall.z < handR.z+2 && zzBall.y-2 > handR.y){
+        if(zzBall.z < handR.z+2 || zzBall.y+2 > handR.y){
             ballThrow = true;
             ballHitR = false;
             ballDir = Vec3f((ballLoc.x - zzBall.x), (ballLoc.y - zzBall.y), (ballLoc.z - zzBall.z));
@@ -120,7 +120,7 @@ void objects::hitTest(ci::Vec3f handR, ci::Vec3f handL ){
     }
     if(ballHitL == true && ballThrow == false){
         ballLoc = handL;
-        if(zBall.z < handL.z+2 && zBall.y-2 > handL.y){
+        if(zBall.z < handL.z+2 && zBall.y+2 > handL.y){
             ballThrow = true;
             ballHitL = false;
             ballDir = Vec3f((ballLoc.x - zBall.x), (ballLoc.y - zBall.y), (ballLoc.z - zBall.z));
@@ -171,7 +171,7 @@ void objects::hitTest(ci::Vec3f handR, ci::Vec3f handL ){
         }
         else if(ballsHit[i] == 2 && ballsThrow[i] == false){
             ballsLoc[i] = handL;
-            if(zBallsLocL[i].z > handL.z+2 && zBallsLocL[i].y-2 > handL.y){
+            if(zBallsLocL[i].z > handL.z+2 || zBallsLocL[i].y+2 > handL.y){
                 ballsThrow[i] = true;
                 ballsHit[i] = 0;
                 ballsDir[i] = Vec3f((ballsLoc[i].x - zBallsLocL[i].x), (ballsLoc[i].y - zBallsLocL[i].y), (ballsLoc[i].z - zBallsLocL[i].z));
@@ -251,7 +251,7 @@ void objects::bounceBall(){
         ballDir.y = -ballDir.y;
     }
     
-    if(ballLoc.z > 50 || ballLoc.z < -100){
+    if(ballLoc.z > 100 || ballLoc.z < -100){
         ballDir.z = -ballDir.z;
     }
     
@@ -278,7 +278,7 @@ void objects::bounceBall(int whichBall){
         ballsDir[whichBall].y = -ballsDir[whichBall].y;
     }
     
-    if(ballsLoc[whichBall].z > 50 || ballsLoc[whichBall].z < -100){
+    if(ballsLoc[whichBall].z > 100 || ballsLoc[whichBall].z < -100){
         ballsDir[whichBall].z = -ballsDir[whichBall].z;
     }
 }

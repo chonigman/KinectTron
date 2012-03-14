@@ -34,6 +34,7 @@ GLfloat no_shininess[]		= { 0.0 };
 
 class threeDstuffApp : public AppBasic {
 public:
+    void prepareSettings( Settings *settings);
 	void setup();
 	void update();
 	void draw();
@@ -100,6 +101,12 @@ protected:
     
 };
 
+void threeDstuffApp::prepareSettings( Settings *settings){
+    //settings->setWindowSize(1280, 800);
+    settings->enableSecondaryDisplayBlanking( false );
+    
+}
+
 void threeDstuffApp::setup()
 {
     host = "127.0.0.1";
@@ -114,22 +121,6 @@ void threeDstuffApp::setup()
     cam.setPerspective( 80.0f, getWindowAspectRatio(), 1.0f, 1000.0f );
     mMayaCam.setCurrentCam( cam );
     
-    //setup first object
-    o1Hit = false;
-    o1z.x = 4;
-    o1z.y = 10;
-    o1z.z = -10;
-    
-    //setup second object
-    o2Hit = false;
-    o2z.x = -4;
-    o2z.y = 15;
-    o2z.z = -20;
-    
-    //o1z = o1;
-    oc1r = 0;
-    oc1g = 1.0f;
-    oc1b = 1.0f;
     listener.setup(12000);
     
     // mLight.Light(2, 1);
@@ -166,6 +157,11 @@ void threeDstuffApp::update()
     
     mObjects.ballRetrieval(head, rH, lH);
 }
+
+
+//*******************************************************************************************
+//                      RECEIVE OSC JOINT POSITIONS
+//*******************************************************************************************
 
 void threeDstuffApp::oscUpdate(){
     while (listener.hasWaitingMessages()) {
@@ -230,22 +226,22 @@ void threeDstuffApp::draw()
     // cout << rS.z - lS.z << std::endl;
     // clear out the window with white
 	gl::clear( Colorf( 0.0f, 0.0f, 0.0f ) ); 
-    //ci::ColorA color( Color(0, 0, 1.0f));
+    ci::ColorA color( al2, al3, al4, al);
     //for(int x = head.x-5; x <head.x+5; x+=5){
     //for(int z = head.y-20; z < head.y+20; z+=10){
-    //glEnable( GL_LIGHTING);
-    //glEnable( GL_LIGHT0);
+    glEnable( GL_LIGHTING);
+    glEnable( GL_LIGHT0);
     //glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-    //light_position[0] = head.x;
-    //light_position[1] = head.y;
-    //light_position[2] = head.z-20
-    //light_position[3] = 0;
-    //glMaterialfv(GL_FRONT, GL_DIFFUSE, color );
+    light_position[0] = 0;
+    light_position[1] = 20;
+    light_position[2] = 70;
+    light_position[3] = 0;
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, color );
     //glMaterialfv( GL_FRONT, GL_SPECULAR, mat_specular );
     //glMaterialfv(GL_FRONT, GL_AMBIENT, color);
-   // glLightfv(GL_FRONT, GL_SPOT_DIRECTION, color);
-    //glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+    //glLightfv(GL_FRONT, GL_SPOT_DIRECTION, color);
+   // glLightfv(GL_LIGHT0, GL_POSITION, light_position);
     //glLightfv(GL_FRONT, GL_SPOT_CUTOFF, light_position);
     
     
@@ -281,6 +277,11 @@ void threeDstuffApp::draw()
     gl::drawCube( rF, Vec3f(1.0f, 1.0f, 1.0f));
     gl::drawCube( lF, Vec3f(1.0f, 1.0f, 1.0f));
     gl::drawCube( head, Vec3f(1.0f, 1.0f, 1.0f));
+        gl::drawLine( rH, rE);
+    gl::drawLine(rE, rS);
+    gl::drawLine(rS, lS);
+    gl::drawLine(lS, lE);
+    gl::drawLine(lE, lH);
     
     
 	//gl::drawStrokedCube(Vec3f::zero(), Vec3f( 6.0f, 6.0f, 6.0f ));
@@ -311,7 +312,7 @@ void threeDstuffApp::draw()
     mMayaCam.setCurrentCam( cam );
     */
     CameraPersp cam;
-    cam.setEyePoint( Vec3f(0, 20, 50) );
+    cam.setEyePoint( Vec3f(0, 20, 100) );
     cam.setCenterOfInterestPoint( Vec3f(0, 20, -100));
     cam.setPerspective( 80.0f, getWindowAspectRatio(), 1.0f, 1000.0f );
     mMayaCam.setCurrentCam( cam );
@@ -324,6 +325,75 @@ void threeDstuffApp::draw()
     
     
 }
+//*****************************************************************************
+//                      WALL HIT SEND OSC
+//*****************************************************************************
+
+
+void threeDstuffApp::wallHit(Vec3f ball){
+    if(ball.y <= 0){
+        al = 1;
+        osc::Message msg;
+        msg.setAddress("/ballFloor");
+        msg.setRemoteEndpoint(host, port);
+        msg.addFloatArg(mObjects.ballLoc.x);
+        msg.addFloatArg(mObjects.ballLoc.y);
+        msg.addFloatArg(mObjects.ballLoc.z);
+        sender.sendMessage(msg);
+    }
+    else if(ball.z <= -100){
+        al2 = 1;
+        al = 1;
+        osc::Message msg;
+        msg.setAddress("/frontWall");
+        msg.setRemoteEndpoint(host, port);
+        msg.addFloatArg(mObjects.ballLoc.x);
+        msg.addFloatArg(mObjects.ballLoc.y);
+        msg.addFloatArg(mObjects.ballLoc.z);
+        sender.sendMessage(msg);
+    }
+    else if(ball.x <= -100){
+        al3 = 1; 
+        al = 1;
+        osc::Message msg;
+        msg.setAddress("/leftWall");
+        msg.setRemoteEndpoint(host, port);
+        msg.addFloatArg(mObjects.ballLoc.x);
+        msg.addFloatArg(mObjects.ballLoc.y);
+        msg.addFloatArg(mObjects.ballLoc.z);
+        sender.sendMessage(msg);
+    }
+    else if(ball.x >= 100){
+        al4 = 1;  
+        al = 1;
+        osc::Message msg;
+        msg.setAddress("/rightWall");
+        msg.setRemoteEndpoint(host, port);
+        msg.addFloatArg(mObjects.ballLoc.x);
+        msg.addFloatArg(mObjects.ballLoc.y);
+        msg.addFloatArg(mObjects.ballLoc.z);
+        sender.sendMessage(msg);
+    }
+    
+}
+
+//************************************************************************************
+//                        FADE OUT LIGHT
+//************************************************************************************
+
+void threeDstuffApp::fadeOut(){
+    if(al <= 1 && al > .2){
+        al = al * .9; 
+       // std::cout<<al<<std::endl
+    }
+    if(al2 <= 1 && al2 > .3) al2 = al2 * .9;
+    if(al3 <= 1 && al3 > .3) al3 = al3 * .9;
+    if(al4 <= 1 && al4 > .3) al4 = al4 * .9;
+    
+}
+//************************************************************************************
+//                 DRAW GRIDS
+//************************************************************************************
 
 void threeDstuffApp::drawGrid(float size, float step)
 {
@@ -334,63 +404,15 @@ void threeDstuffApp::drawGrid(float size, float step)
         gl::drawLine(Vec3f(i, 0.0f, -size), Vec3f(i, 0.0f, size) );
         gl::drawLine(Vec3f(-size, 0.0f, i), Vec3f(size, 0.0f, i) );
     }
+    for(float i=-size; i<=size; i+=step) {
+        gl::drawLine(Vec3f(i, 100.0f, -size), Vec3f(i, 100.0f, size) );
+        gl::drawLine(Vec3f(-size, 100.0f, i), Vec3f(size, 100.0f, i) );
+    }
+    
+    
     
 }
 
-void threeDstuffApp::wallHit(Vec3f ball){
-    if(ball.y <= 0){
-        al = 1;
-        osc::Message msg;
-        msg.setAddress("/ballFloor");
-        msg.setRemoteEndpoint(host, port);
-        msg.addFloatArg(mObjects.ballLoc.x);
-        msg.addFloatArg(mObjects.ballDir.y);
-        msg.addFloatArg(mObjects.ballLoc.z);
-        sender.sendMessage(msg);
-    }
-    else if(ball.z <= -100){
-        al2 = 1;
-        osc::Message msg;
-        msg.setAddress("/frontWall");
-        msg.setRemoteEndpoint(host, port);
-        msg.addFloatArg(mObjects.ballDir.x);
-        msg.addFloatArg(mObjects.ballDir.y);
-        msg.addFloatArg(mObjects.ballDir.z);
-        sender.sendMessage(msg);
-    }
-    else if(ball.x <= -100){
-        al3 = 1; 
-        osc::Message msg;
-        msg.setAddress("/leftWall");
-        msg.setRemoteEndpoint(host, port);
-        msg.addFloatArg(mObjects.ballDir.x);
-        msg.addFloatArg(mObjects.ballDir.y);
-        msg.addFloatArg(mObjects.ballDir.z);
-        sender.sendMessage(msg);
-    }
-    else if(ball.x >= 100){
-        al4 = 1;  
-        osc::Message msg;
-        msg.setAddress("/rightWall");
-        msg.setRemoteEndpoint(host, port);
-        msg.addFloatArg(mObjects.ballDir.x);
-        msg.addFloatArg(mObjects.ballDir.y);
-        msg.addFloatArg(mObjects.ballDir.z);
-        sender.sendMessage(msg);
-    }
-    
-}
-
-void threeDstuffApp::fadeOut(){
-    if(al <= 1 && al > .2){
-        al = al * .9; 
-       // std::cout<<al<<std::endl
-    }
-    if(al2 <= 1 && al2 > .2) al2 = al2 * .9;
-    if(al3 <= 1 && al3 > .2) al3 = al3 * .9;
-    if(al4 <= 1 && al4 > .2) al4 = al4 * .9;
-    
-}
 
 void threeDstuffApp::drawGridY(float size, float step){
     gl::color( Colorf(0.2f, 0.2f, 0.2f) );
@@ -427,16 +449,10 @@ void threeDstuffApp::drawGridY(float size, float step){
             
         }
     }
+    
+    
 }
 
-void threeDstuffApp::drawCone(float size, float step){
-    for(float i = -size; i <= size; i+=step){
-        gl::drawLine(Vec3f(size, 0, i), Vec3f(0, -size/4, 0) );
-        gl::drawLine(Vec3f(-size, 0, i), Vec3f(0, -size/4, 0) );
-        gl::drawLine(Vec3f(i, 0, size), Vec3f(0, -size/4, 0) );
-        gl::drawLine(Vec3f(i, 0, -size), Vec3f(0, -size/4, 0) );
-    }
-}
 
 void threeDstuffApp::mouseMove( MouseEvent event )
 {

@@ -5,8 +5,8 @@ cCheck dependencies
 cProcessInfoPlistFile /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/Info.plist Info.plist
 cCpResource ../resources/CinderApp.icns build/Debug/threeDstuff.app/Contents/Resources/CinderApp.icns
 cProcessPCH++ /var/folders/xb/xbiFjKPYFsmmd++-rxDQgE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/threeDstuff_Prefix-gsnvuhahjvgutgdxbklqcrcvthkv/threeDstuff_Prefix.pch.gch threeDstuff_Prefix.pch normal i386 c++ com.apple.compilers.llvmgcc42
-cCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/OscListener.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscListener.cpp normal i386 c++ com.apple.compilers.llvmgcc42
 cCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/OscBundle.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscBundle.cpp normal i386 c++ com.apple.compilers.llvmgcc42
+cCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/OscListener.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscListener.cpp normal i386 c++ com.apple.compilers.llvmgcc42
 cCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/OscMessage.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscMessage.cpp normal i386 c++ com.apple.compilers.llvmgcc42
 cCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/OscSender.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscSender.cpp normal i386 c++ com.apple.compilers.llvmgcc42
 cCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuffApp.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cpp normal i386 c++ com.apple.compilers.llvmgcc42
@@ -278,9 +278,9 @@ t1319153989
 s114357
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cpp
-c000000004F5EEB0A0000000000004054
-t1331620618
-s16468
+c000000004F6060F100000000000040EF
+t1331716337
+s16623
 i"cinder/app/AppBasic.h"
 i"cinder/gl/Texture.h"
 i"cinder/gl/GlslProg.h"
@@ -298,7 +298,7 @@ i<utility>
 i<math.h>
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app
-t1331620686
+t1331716305
 s102
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/Info.plist
@@ -306,8 +306,8 @@ t1331582983
 s1239
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff
-t1331620686
-s7778788
+t1331716304
+s7778884
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/PkgInfo
 t1331582983
@@ -334,8 +334,8 @@ t1331582984
 s96956
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/objects.o
-t1331620681
-s73332
+t1331690646
+s73528
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuff.LinkFileList
 c000000004F5E5807000000000000032A
@@ -343,13 +343,13 @@ t1331582983
 s810
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuffApp.o
-t1331620683
-s572444
+t1331716300
+s573400
 
 N/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/objects.cpp
-c000000004F5EEBCC0000000000002723
-t1331620812
-s10019
+c000000004F5FFC8A0000000000002725
+t1331690634
+s10021
 i"objects.h"
 i"cinder/Vector.h"
 i"cinder/gl/gl.h"
@@ -8129,7 +8129,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesacacf54d230fb541^056dfe4d230fb541^---0#1#0#--18"Check dependencies
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies666af6729810b541^4487f8729810b541^---0#1#0#--18"Check dependencies
 
 CCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/OscBundle.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscBundle.cpp normal i386 c++ com.apple.compilers.llvmgcc42
 s353275784.176738
@@ -8184,8 +8184,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscSender.cppe52860878f0eb541^f5f33a888f0eb541^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscSender.cpp0000000000000000^1987"CompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/OscSender.o ../../../blocks/osc/src/OscSender.cpp normal i386 c++ com.apple.compilers.llvmgcc42    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -fvisibility-inlines-hidden -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-generated-files.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-own-target-headers.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-all-target-headers.hmap -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-project-headers.hmap -iquote../../../include -iquote../include -iquote../../../blocks/osc/include -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/include -I../../../boost -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources/i386 -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources -F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -include /var/folders/xb/xbiFjKPYFsmmd++-rxDQgE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/threeDstuff_Prefix-gsnvuhahjvgutgdxbklqcrcvthkv/threeDstuff_Prefix.pch -c /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/src/OscSender.cpp -o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/OscSender.o
 
 CCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/objects.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/objects.cpp normal i386 c++ com.apple.compilers.llvmgcc42
-s353313614.053309
-e353313619.933602
+s353383439.198790
+e353383446.818819
 r1
 xCompileC
 xbuild/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/objects.o
@@ -8194,11 +8194,11 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compile /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/objects.cpp2bbe0d4e230fb541^82feee53230fb541^---0#0#0#-19%DVTDocumentLocation2@81"file://localhost/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/objects.cpp0000000000000000^1931"CompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/objects.o objects.cpp normal i386 c++ com.apple.compilers.llvmgcc42    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -fvisibility-inlines-hidden -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-generated-files.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-own-target-headers.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-all-target-headers.hmap -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-project-headers.hmap -iquote../../../include -iquote../include -iquote../../../blocks/osc/include -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/include -I../../../boost -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources/i386 -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources -F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -include /var/folders/xb/xbiFjKPYFsmmd++-rxDQgE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/threeDstuff_Prefix-gsnvuhahjvgutgdxbklqcrcvthkv/threeDstuff_Prefix.pch -c /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/objects.cpp -o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/objects.o
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compile /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/objects.cpp76f9320f3410b541^14afd2163410b541^---0#0#0#-19%DVTDocumentLocation2@81"file://localhost/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/objects.cpp0000000000000000^1931"CompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/objects.o objects.cpp normal i386 c++ com.apple.compilers.llvmgcc42    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -fvisibility-inlines-hidden -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-generated-files.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-own-target-headers.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-all-target-headers.hmap -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-project-headers.hmap -iquote../../../include -iquote../include -iquote../../../blocks/osc/include -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/include -I../../../boost -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources/i386 -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources -F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -include /var/folders/xb/xbiFjKPYFsmmd++-rxDQgE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/threeDstuff_Prefix-gsnvuhahjvgutgdxbklqcrcvthkv/threeDstuff_Prefix.pch -c /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/objects.cpp -o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/objects.o
 
 CCompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuffApp.o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cpp normal i386 c++ com.apple.compilers.llvmgcc42
-s353313473.632985
-e353313483.484322
+s353409139.015795
+e353409144.983310
 r1
 xCompileC
 xbuild/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuffApp.o
@@ -8207,7 +8207,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cppea21a2c1220fb541^180a7ccb220fb541^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cpp0000000000000000^1973"CompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuffApp.o ../src/threeDstuffApp.cpp normal i386 c++ com.apple.compilers.llvmgcc42    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -fvisibility-inlines-hidden -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-generated-files.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-own-target-headers.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-all-target-headers.hmap -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-project-headers.hmap -iquote../../../include -iquote../include -iquote../../../blocks/osc/include -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/include -I../../../boost -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources/i386 -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources -F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -include /var/folders/xb/xbiFjKPYFsmmd++-rxDQgE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/threeDstuff_Prefix-gsnvuhahjvgutgdxbklqcrcvthkv/threeDstuff_Prefix.pch -c /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cpp -o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuffApp.o
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cpp134904739810b541^efc5fb789810b541^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cpp0000000000000000^1973"CompileC build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuffApp.o ../src/threeDstuffApp.cpp normal i386 c++ com.apple.compilers.llvmgcc42    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -fvisibility-inlines-hidden -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-generated-files.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-own-target-headers.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-all-target-headers.hmap -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-project-headers.hmap -iquote../../../include -iquote../include -iquote../../../blocks/osc/include -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/include -I../../../boost -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources/i386 -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources -F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -include /var/folders/xb/xbiFjKPYFsmmd++-rxDQgE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/threeDstuff_Prefix-gsnvuhahjvgutgdxbklqcrcvthkv/threeDstuff_Prefix.pch -c /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../src/threeDstuffApp.cpp -o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuffApp.o
 
 CCpResource ../resources/CinderApp.icns build/Debug/threeDstuff.app/Contents/Resources/CinderApp.icns
 s353275783.154565
@@ -8219,14 +8219,14 @@ xbuild/Debug/threeDstuff.app/Contents/Resources/CinderApp.icns
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy build/Debug/threeDstuff.app/Contents/Resources/CinderApp.icnsf4a927878f0eb541^48fe28878f0eb541^---0#0#0#-19%DVTDocumentLocation2@131"file://localhost/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/Resources/CinderApp.icns0000204d2205f041^444"CpResource ../resources/CinderApp.icns build/Debug/threeDstuff.app/Contents/Resources/CinderApp.icns    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../resources/CinderApp.icns /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/Resources
 
 CLd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff normal i386
-s353313619.935478
-e353313621.116090
+s353409144.985167
+e353409145.929906
 r1
 xLd
 x/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff
 xnormal
 xi386
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Link /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff029fef53230fb541^cac01d55230fb541^---0#0#0#--1016"Ld build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff normal i386    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/llvm-g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -filelist /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuff.LinkFileList -mmacosx-version-min=10.5 ../../../lib/libcinder_d.a /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/lib/macosx/osc.a -lcurl -framework Cocoa -framework OpenGL -framework Carbon -framework CoreVideo -framework QTKit -framework QuickTime -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Link /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff8446fc789810b541^1f0eee799810b541^---0#0#0#--1016"Ld build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff normal i386    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/llvm-g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -filelist /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/Objects-normal/i386/threeDstuff.LinkFileList -mmacosx-version-min=10.5 ../../../lib/libcinder_d.a /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/../../../blocks/osc/lib/macosx/osc.a -lcurl -framework Cocoa -framework OpenGL -framework Carbon -framework CoreVideo -framework QTKit -framework QuickTime -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -o /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/MacOS/threeDstuff
 
 CProcessInfoPlistFile /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app/Contents/Info.plist Info.plist
 s353275783.123670
@@ -8254,10 +8254,10 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection33"Precompile threeDstuff_Prefix.pchd2c22d878f0eb541^e7c75f878f0eb541^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/threeDstuff_Prefix.pch0000000000000000^1922"ProcessPCH++ /var/folders/xb/xbiFjKPYFsmmd++-rxDQgE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/threeDstuff_Prefix-gsnvuhahjvgutgdxbklqcrcvthkv/threeDstuff_Prefix.pch.gch threeDstuff_Prefix.pch normal i386 c++ com.apple.compilers.llvmgcc42    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++-header -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -fvisibility-inlines-hidden -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-generated-files.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-own-target-headers.hmap -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-all-target-headers.hmap -iquote /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/threeDstuff-project-headers.hmap -iquote../../../include -iquote../include -iquote../../../blocks/osc/include -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/include -I../../../boost -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources/i386 -I/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/threeDstuff.build/Debug/threeDstuff.build/DerivedSources -F/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug -c /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/threeDstuff_Prefix.pch -o /var/folders/xb/xbiFjKPYFsmmd++-rxDQgE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/threeDstuff_Prefix-gsnvuhahjvgutgdxbklqcrcvthkv/threeDstuff_Prefix.pch.gch
 
 CTouch /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app
-s353313621.122136
-e353313621.132772
+s353409145.932871
+e353409145.940588
 r1
 xTouch
 x/Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Touch /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app6d541f55230fb541^25052255230fb541^---0#0#0#--199"Touch build/Debug/threeDstuff.app    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    /usr/bin/touch -c /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Touch /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app5de0ee799810b541^2ecaf0799810b541^---0#0#0#--199"Touch build/Debug/threeDstuff.app    cd /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode    /usr/bin/touch -c /Users/CHIBI/cinder_master/Projects/threeDstuff/xcode/build/Debug/threeDstuff.app
 
