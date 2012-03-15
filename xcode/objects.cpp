@@ -32,17 +32,17 @@ objects::objects(){
     xDir = 0;
     yDir = 0;
     zDir = 0;
-    for(int i = 0; i < 4; i++){
-        ballsLoc[i] = Vec3f(-4+(5*i), 5+i*4, i*3); 
+    for(int i = 0; i < 8; i++){
+        ballsLoc[i] = Vec3f(-8+(5*i), 5+i*2, 10+i*3); 
         ballsThrow[i] = false;
     }
 }
 
 void objects::draw(){
-    ball();
-    rod();
+   // ball();
+   // rod();
     
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < 8; i++){
         ball(ballsLoc[i]);
     }
 }
@@ -53,7 +53,7 @@ void objects::update(){
         bounceBall();
     }
     
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < 8; i++){
         if(ballsThrow[i] == true){
          //   std::cout << "ball throwing no moving?" << std::endl;
             bounceBall( i );
@@ -138,7 +138,7 @@ void objects::hitTest(ci::Vec3f handR, ci::Vec3f handL ){
     
     //**********************************Balls 2 3 and 4 *************************************
     //***************************************************************************************    
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < 8; i++){
         if(handR.x < ballsLoc[i].x+2.0f && handR.x > ballsLoc[i].x-2.0f && handR.y < ballsLoc[i].y+2.0f && handR.y > ballsLoc[i].y-2.0f && handR.z < ballsLoc[i].z + 2.0f && handR.z > ballsLoc[i].z - 2.0f){
             
             float handDist = abs(handR.x - handL.x) + abs(handR.y - handL.y);
@@ -182,9 +182,11 @@ void objects::hitTest(ci::Vec3f handR, ci::Vec3f handL ){
         
         if( ballsHit[i] == 1 && ballsThrow[i] == true){
             ballsThrow[i] = false;
+           // zBallsLocR[i] = handR;
         }
         else if( ballsHit[i] == 2 && ballsThrow[i] == true){
             ballsThrow[i] = false;
+           // zBallsLocL[i] = handL;
         }
     }
     
@@ -296,16 +298,17 @@ void objects::ballRetrieval(ci::Vec3f head, ci::Vec3f handR, ci::Vec3f handL){
         ballHitL = true;
     }
     
-    for(int i = 0; i < 4; i ++){
-        if(ballsLoc[i].z > head.z && handR.y > head.y){
+    for(int i = 0; i < 8; i ++){
+        if(ballsLoc[i].z > head.z && handR.y > head.y && handL.y > head.y){
             ballsThrow[i] = false;
-            ballsHit[i] = 1;
+            if(handR.y>handL.y) ballsHit[i] = 1;
+            else ballsHit[i] = 2;
         }
         
-        if(ballsLoc[i].z > head.z && handL.y > head.y){
-            ballsThrow[i] = false;
-            ballsHit[i] = 2;
-        }
+        //if(ballsLoc[i].z > head.z && handL.y > head.y){
+        //    ballsThrow[i] = false;
+        //    ballsHit[i] = 2;
+       // }
         
     }
     

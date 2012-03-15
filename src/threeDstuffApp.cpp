@@ -148,9 +148,9 @@ void threeDstuffApp::update()
     light_position[4] = 0;
     
     mObjects.update();
-    wallHit(mObjects.ballLoc);
+    //wallHit(mObjects.ballLoc);
     
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < 8; i++){
         wallHit(mObjects.ballsLoc[i]);
     }
     fadeOut();
@@ -229,19 +229,20 @@ void threeDstuffApp::draw()
     ci::ColorA color( al2, al3, al4, al);
     //for(int x = head.x-5; x <head.x+5; x+=5){
     //for(int z = head.y-20; z < head.y+20; z+=10){
+   // gl::pushMatrices();
     glEnable( GL_LIGHTING);
     glEnable( GL_LIGHT0);
     //glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-    light_position[0] = 0;
-    light_position[1] = 20;
-    light_position[2] = 70;
-    light_position[3] = 0;
+   // light_position[0] = 0;
+   // light_position[1] = 20;
+   // light_position[2] = 70;
+   // light_position[3] = 0;
     glMaterialfv(GL_FRONT, GL_DIFFUSE, color );
     //glMaterialfv( GL_FRONT, GL_SPECULAR, mat_specular );
     //glMaterialfv(GL_FRONT, GL_AMBIENT, color);
-    //glLightfv(GL_FRONT, GL_SPOT_DIRECTION, color);
-   // glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+   // glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, color);
+   //glLightfv(GL_LIGHT0, GL_POSITION, light_position);
     //glLightfv(GL_FRONT, GL_SPOT_CUTOFF, light_position);
     
     
@@ -375,6 +376,20 @@ void threeDstuffApp::wallHit(Vec3f ball){
         sender.sendMessage(msg);
     }
     
+    else if(ball.y >= 100){
+        al4 = 1; 
+        al2 = 1;
+        al = 1;
+        osc::Message msg;
+        msg.setAddress("/ballCeiling");
+        msg.setRemoteEndpoint(host, port);
+        msg.addFloatArg(mObjects.ballLoc.x);
+        msg.addFloatArg(mObjects.ballLoc.y);
+        msg.addFloatArg(mObjects.ballLoc.z);
+        sender.sendMessage(msg);
+    }
+    
+    
 }
 
 //************************************************************************************
@@ -386,9 +401,9 @@ void threeDstuffApp::fadeOut(){
         al = al * .9; 
        // std::cout<<al<<std::endl
     }
-    if(al2 <= 1 && al2 > .3) al2 = al2 * .9;
-    if(al3 <= 1 && al3 > .3) al3 = al3 * .9;
-    if(al4 <= 1 && al4 > .3) al4 = al4 * .9;
+    if(al2 <= 1 && al2 > .4) al2 = al2 * .9;
+    if(al3 <= 1 && al3 > .4) al3 = al3 * .9;
+    if(al4 <= 1 && al4 > .4) al4 = al4 * .9;
     
 }
 //************************************************************************************

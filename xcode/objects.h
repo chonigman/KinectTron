@@ -35,8 +35,8 @@ public:
     bool ballThrow, b2Throw, b3Throw, b4Throw;
     int xDir, yDir, zDir;
 
-    ci::Vec3f ballsLoc[4], ballsDir[4], ballsColor[4], zBallsLocR[4], zBallsLocL[4];
-    int ballsHit[4];
-    bool ballsThrow[4];
+    ci::Vec3f ballsLoc[8], ballsDir[8], ballsColor[8], zBallsLocR[8], zBallsLocL[8];
+    int ballsHit[8];
+    bool ballsThrow[8];
     
 };
